@@ -17,8 +17,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "",
-      "pre-push": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
@@ -27,8 +26,11 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.0.6",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
