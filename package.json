@@ -1,0 +1,8 @@
+{
+  "name": "omnin-stack-10",
+  "version": "1.0.0",
+  "description": "Semana OmninStack10",
+  "main": "entry.js",
+  "author": "Neto Moura <netomourajs@gmail.com>",
+  "license": "MIT"
+}
