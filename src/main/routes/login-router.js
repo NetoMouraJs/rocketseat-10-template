@@ -1,5 +1,7 @@
+const loginController = require('../controllers/login-controller')
+
 module.exports = router => {
-  router.get('/test', (req, res) => {
-    res.json({ msg: 'route-login' })
-  })
+  router.get('/user', loginController.show)
+
+  router.post('/user', loginController.store)
 }
