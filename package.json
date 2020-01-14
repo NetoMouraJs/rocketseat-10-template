@@ -10,8 +10,8 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix src/",
+    "src/**/*.{js,jsx}": [
+      "eslint . --fix",
       "git add"
     ]
   },
