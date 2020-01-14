@@ -4,5 +4,8 @@
   "description": "Semana OmninStack10",
   "main": "entry.js",
   "author": "Neto Moura <netomourajs@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
