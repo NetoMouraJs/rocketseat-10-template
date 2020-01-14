@@ -1,2 +1,2 @@
-const express = require('express')
-module.exports = express.json()
+const express = require("express");
+module.exports = express.json();
