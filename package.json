@@ -2,10 +2,32 @@
   "name": "omnin-stack-10",
   "version": "1.0.0",
   "description": "Semana OmninStack10",
-  "main": "entry.js",
+  "main": "src/main/entry.js",
   "author": "Neto Moura <netomourajs@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/main/entry.js",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "fast-glob": "^3.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "husky": "^4.0.6",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "nodemon": "^2.0.2"
   }
 }
