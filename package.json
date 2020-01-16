@@ -7,10 +7,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/main/entry.js",
-    "test": "jest  --watchAll",
-    "test:staged": "npm run test:unit -- --forceExit ",
-    "test:unit": "jest --config jest.unit.config.js",
-    "test:integration": "jest --config jest.integration.config.js"
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "test:dev":"npm run test -- --watch",
+    "test:ci":"npm run test -- --coverage",
+    "test:staged": "npm run test:unit --",
+    "test:unit": "npm test -- --config jest.unit.config.js",
+    "test:integration": "npm test -- --config jest.integration.config.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
@@ -22,7 +24,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "lint-staged && yarn test"
+      "pre-push": "lint-staged && yarn test:ci"
     }
   },
   "dependencies": {
