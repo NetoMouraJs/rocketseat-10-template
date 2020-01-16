@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "nodemon src/main/entry.js",
     "test": "jest  --watchAll",
-    "test:staged": "jest --forceExit "
+    "test:staged": "npm run test:unit -- --forceExit ",
+    "test:unit": "jest --config jest.unit.config.js",
+    "test:integration": "jest --config jest.integration.config.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [

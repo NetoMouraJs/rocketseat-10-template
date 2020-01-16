@@ -5,5 +5,5 @@ module.exports = {
   clearMocks: true,
   testEnvironment: 'node',
   coverageDirectory: 'coverage',
-  testMatch: ['**/src/**/?(*.)+(spec|test).[j]s', '!**/src/main/**']
+  testMatch: ['**/src/**/?(*.)+(unit.spec|unit.test).js', '!**/src/main/**']
 }

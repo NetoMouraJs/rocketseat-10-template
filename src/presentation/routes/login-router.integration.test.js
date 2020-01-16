@@ -1,0 +1,4 @@
+describe('Dado', () => {
+  test('QuandoDeveEntao', () => {
+  })
+})
