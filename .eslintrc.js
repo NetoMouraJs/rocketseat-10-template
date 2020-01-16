@@ -2,7 +2,8 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    jest:true
+    jest: true,
+    mongo:true
   },
   extends: [
     'standard'
@@ -14,5 +15,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module'
+  },
+  rules: {
+    camelcase: [1, { ignoreDestructuring: true }]
   }
 }

@@ -7,11 +7,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/main/entry.js",
-    "test": "jest"
+    "test": "jest  --watchAll",
+    "test:staged": "jest --forceExit "
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
       "eslint . --fix",
+      "yarn test:staged",
       "git add"
     ]
   },
@@ -22,8 +24,10 @@
     }
   },
   "dependencies": {
+    "axios": "^0.19.1",
     "express": "^4.17.1",
-    "fast-glob": "^3.1.1"
+    "fast-glob": "^3.1.1",
+    "mongoose": "^5.8.7"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
