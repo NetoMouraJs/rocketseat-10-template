@@ -17,6 +17,6 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    camelcase: [1, { ignoreDestructuring: true }]
+    camelcase: [0, { ignoreDestructuring: true }]
   }
 }
