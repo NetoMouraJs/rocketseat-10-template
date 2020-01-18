@@ -7,12 +7,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/main/entry.js",
-    "test": "jest --runInBand --detectOpenHandles --forceExit",
-    "test:dev":"npm run test -- --watch",
+    "test": "jest --runInBand --detectOpenHandles",
     "test:ci":"npm run test -- --coverage",
-    "test:staged": "npm run test:unit --",
-    "test:unit": "npm test -- --config jest.unit.config.js",
-    "test:integration": "npm test -- --config jest.integration.config.js"
+    "test:staged": "npm run test --",
+    "test:unit": "npm test -- --config jest.unit.config.js --watch",
+    "test:integration": "npm test -- --config jest.integration.config.js --watch"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [

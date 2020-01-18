@@ -1,4 +1,0 @@
-describe('Dado', () => {
-  test('QuandoDeveEntao', () => {
-  })
-})
