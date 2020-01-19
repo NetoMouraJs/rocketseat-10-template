@@ -1,11 +1,4 @@
-const { MissingParamsError } = require('../presentation/utils/errors')
-
-class InvalidParamsError extends Error {
-  constructor (paramsName) {
-    super(`Invalid value sended: ${paramsName}`)
-    this.name = 'InvalidParamsError'
-  }
-}
+const { MissingParamsError, InvalidParamsError } = require('../presentation/utils/errors')
 
 class UserGithubServiceFake {
   load (github_username) {
