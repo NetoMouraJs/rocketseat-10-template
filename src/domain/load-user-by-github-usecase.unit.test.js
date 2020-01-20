@@ -1,5 +1,7 @@
 const { MissingParamsError, InvalidParamsError } = require('../presentation/utils/errors')
 
+const LoadUserByGithubUseCase = require('./load-user-by-github-usecase')
+
 class UserGithubServiceFake {
   load (github_username) {
     return { github_username }
@@ -11,29 +13,6 @@ class UserGithubServiceWithError {
   }
 }
 
-class LoadUserByGithubUseCase {
-  constructor ({ userGithubService } = {}) {
-    this._userGithubService = userGithubService
-  }
-
-  async load (github_username, techs) {
-    if (!github_username) {
-      throw new MissingParamsError('github_username')
-    }
-
-    if (!techs) {
-      throw new MissingParamsError('techs')
-    }
-
-    if (techs.lenght > 0) {
-      throw new InvalidParamsError('techs')
-    }
-
-    const user = this._userGithubService.load(github_username)
-
-    return user
-  }
-}
 const makeSut = () => {
   const userGithubServiceFake = new UserGithubServiceFake()
   const sut = new LoadUserByGithubUseCase({ userGithubService: userGithubServiceFake })
@@ -51,6 +30,12 @@ describe('LoadUserByGithubUseCase', () => {
     const { sut } = makeSut()
     const promise = sut.load('any_username')
     expect(promise).rejects.toThrow(new MissingParamsError('techs'))
+  })
+
+  test('Should return 500 if techs does not provide correctly', () => {
+    const { sut } = makeSut()
+    const promise = sut.load('any_username', [])
+    expect(promise).rejects.toThrow(new InvalidParamsError('techs'))
   })
 
   test('Should return 200 if correct values are provide', async () => {
