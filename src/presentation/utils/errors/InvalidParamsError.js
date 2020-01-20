@@ -4,4 +4,4 @@ class InvalidParamsError extends Error {
     this.name = 'InvalidParamsError'
   }
 }
-exports.InvalidParamsError = InvalidParamsError
+module.exports = InvalidParamsError
